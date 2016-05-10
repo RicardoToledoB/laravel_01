@@ -2,7 +2,8 @@
 
 Listado de Usuarios.
 <br>
-<a href="nuevo">Nuevo Usuario</a>
+
+<a  href="{{ url('/users/nuevo') }}" > Nuevo Usuario </a>
 
 <table border="1">
     <tr>
@@ -11,27 +12,27 @@ Listado de Usuarios.
     <th>NOMBRE</th>
     <th>CREADO</th>
     <th>ACCIONES</th>
-    </thead>
-    <tbody>
-        <?php foreach($usuarios as $user) {?>
-        <tr>
-            <td>
-                <?php echo $user->id ?>
-            </td>
-             <td>
-                <?php echo $user->nombre ?>
-            </td>
-             <td>
-                <?php echo $user->created_at ?>
-            </td>
-             <td>
-                 <a href='<?php echo 'delete/'.$user->id; ?>'>Eliminar</a>
-               
-                 
-            </td>
-        </tr>
-        <?php }?>
-    </tbody>
-    
+</thead>
+<tbody>
+    @foreach($usuarios as $user) 
+    <tr>
+        <td>
+            {{ $user->id  }}
+        </td>
+        <td>
+            {{ $user->nombre }}
+        </td>
+        <td>
+            {{ $user->created_at }}
+        </td>
+        <td>
+            {!! Form::open(['route' => ['usersDelete', $user->id], 'method' => 'DELETE']) !!} 
+                <input type="submit" value="eliminar">
+            {!! Form::close() !!}
+        </td>
+    </tr>
+    @endforeach 
+</tbody>
+
 </tr>
 </table>

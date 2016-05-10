@@ -19,7 +19,7 @@ Route::post('users/save',[
 
 ]);
 
-Route::get('users/delete/{id}',[
+Route::delete('users/delete/{id}',[
     'as'=>'usersDelete',
     'uses'=>'UsuarioController@delete'
 ]);
