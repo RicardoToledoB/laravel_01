@@ -32,10 +32,10 @@ class UsuarioController extends Controller {
     public function index(Request $request) {
         $name = $request->input('nombre');
         if($name!=null){
-            $data = Usuario::where('nombre', 'like', '%'.$name.'%')->paginate(10);
+            $data =   Usuario::where('nombre', 'like', '%'.$name.'%')->paginate(10);
             //$data = DB::table('Usuarios')->where('nombre','like',$name)->paginate(10);
         }else{
-            $data = DB::table('Usuarios')->paginate(10);
+            $data = Usuario::paginate(10);
         }
         //dd($data);
         return view('users.index',  compact('data'));
