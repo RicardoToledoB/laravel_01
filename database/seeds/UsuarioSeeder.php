@@ -12,11 +12,12 @@ class UsuarioSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for ($i=0; $i < 1000000; $i++) {
+        for ($i=0; $i < 100; $i++) {
             \DB::table('usuarios')->insert(array(
                    'nombre'  => $faker->randomElement(['JUAN','PEDRO','RICARDO']),
                    'created_at' => date('Y-m-d H:m:s'),
-                   'updated_at' => date('Y-m-d H:m:s')
+                   'updated_at' => date('Y-m-d H:m:s'),
+                   'ciudad_id' => 1
             ));
         }
     }

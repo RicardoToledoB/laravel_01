@@ -3,14 +3,13 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Usuarios extends Migration {
-
+class Ciudades extends Migration
+{
     public function up() {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('ciudades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->timestamps();
-            
            
         });
         
@@ -18,7 +17,6 @@ class Usuarios extends Migration {
     }
 
     public function down() {
-        Schema::drop('usuarios');
+        Schema::drop('ciudades');
     }
-
 }

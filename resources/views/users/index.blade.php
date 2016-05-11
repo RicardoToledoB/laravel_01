@@ -57,6 +57,7 @@
                         <thead>
                         <th>#</th>
                         <th>NOMBRE</th>
+                        <th>CIUDAD</th>
                         <th>CREADO</th>
                         <th width="5%">Eliminar</th>
                         <th width="5%">Editar</th>
@@ -70,6 +71,9 @@
                                 </td>
                                 <td>
                                     {{ $user->nombre }}
+                                </td>
+                                <td>
+                                    {{ $user->ciudad->nombre }}
                                 </td>
                                 <td>
                                     {{ $user->created_at }}
