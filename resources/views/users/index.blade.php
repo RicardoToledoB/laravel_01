@@ -29,6 +29,7 @@
                         <li class="active"><a href="#">Usuario</a></li>
                         <li><a href="#about">Ciudades</a></li>
                         <li><a href="#contact">Acerca De</a></li>
+                        <li><a href="#contact">Cerrar Sesion</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -41,10 +42,17 @@
             <br><br>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    {!! Form::open(array('url' => 'users/index','method' => 'get')) !!}
-                    {{ Form::label('nombre', 'Buscar') }}
-                    {{ Form::text('nombre') }}
-                    {{ Form::submit('Buscar') }}
+                   
+
+
+
+
+                    {!! Form::open(array('url' => 'users/index','method' => 'get','class' => 'form-inline')) !!}
+                    <div class="form-group">
+                        {{ Form::label('nombre', 'Buscar') }}
+                        {{ Form::text('nombre','', array('class' => 'form-control','placeholder'=>'Buscar por Nombre'))  }}
+                        {{ Form::submit('Buscar',array('class' => 'btn btn-primary')) }}
+                    </div>
                     {!! Form::close() !!} 
                     <br>
 
@@ -54,7 +62,9 @@
                         <th>#</th>
                         <th>NOMBRE</th>
                         <th>CREADO</th>
-                        <th>ACCIONES</th>
+                        <th width="5%">Eliminar</th>
+                        <th width="5%">Editar</th>
+                        <th width="5%">Detalle</th>
                         </thead>
                         <tbody>
                             @foreach($data as $user) 
@@ -73,6 +83,18 @@
                                     <input type="submit" value="eliminar" class="btn btn-xs btn-danger">
                                     {!! Form::close() !!}
                                 </td>
+                                <td>
+                                    <a href="{{ url('/users/edit/'.$user->id) }}" class="btn btn-xs btn-info">
+                                        editar 
+                                    </a>
+
+                                </td>
+                                <td>
+                                    <a href="{{ url('/users/detalle/'.$user->id) }}" class="btn btn-xs btn-success">
+                                        editar 
+                                    </a>
+
+                                </td>
                             </tr>
                             @endforeach 
 
@@ -83,8 +105,8 @@
                     </table>
                     <br>
                     <!--{!! $data->links() !!}-->
-                   
-                    
+
+
                     {!! $data->appends(['nombre' => \Request::get('nombre')])->links() !!}
                 </div>
             </div>
