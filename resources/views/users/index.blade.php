@@ -26,10 +26,10 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Usuario</a></li>
-                        <li><a href="#about">Ciudades</a></li>
-                        <li><a href="#contact">Acerca De</a></li>
-                        <li><a href="#contact">Cerrar Sesion</a></li>
+                        <li class="active"><a href="{{ url('/users/index') }}">Usuario</a></li>
+                        <li><a href="{{ url('/cities/index') }}">Ciudades</a></li>
+                        <li><a href="{{ url('/contacts/index') }}">Acerca De</a></li>
+                        <li><a href="#">Cerrar Sesion</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -41,13 +41,9 @@
             <a  href="{{ url('/users/nuevo') }}" class="btn btn-primary" > Nuevo Usuario </a>
             <br><br>
             <div class="panel panel-default">
+                <div class="panel-heading">Listado de Usuarios</div>
                 <div class="panel-body">
-                   
-
-
-
-
-                    {!! Form::open(array('url' => 'users/index','method' => 'get','class' => 'form-inline')) !!}
+                   {!! Form::open(array('url' => 'users/index','method' => 'get','class' => 'form-inline')) !!}
                     <div class="form-group">
                         {{ Form::label('nombre', 'Buscar') }}
                         {{ Form::text('nombre','', array('class' => 'form-control','placeholder'=>'Buscar por Nombre'))  }}

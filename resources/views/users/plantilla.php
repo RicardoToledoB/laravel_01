@@ -26,10 +26,10 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="{{ url('/users/index') }}">Usuario</a></li>
-                        <li><a href="{{ url('/cities/index') }}">Ciudades</a></li>
-                        <li><a href="{{ url('/contacts/index') }}">Acerca De</a></li>
-                        <li><a href="#">Cerrar Sesion</a></li>
+                        <li class="active"><a href="#">Usuario</a></li>
+                        <li><a href="#about">Ciudades</a></li>
+                        <li><a href="#contact">Acerca De</a></li>
+                        <li><a href="#contact">Cerrar Sesion</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -38,23 +38,17 @@
         <div class="container">
             <br><br><br>
 
-            <br><br>
+             <br><br>
             <div class="panel panel-default">
-                <div class="panel-heading">Nuevo Usuario</div>
                 <div class="panel-body">
-                   
-                    <br>
-                    {!! Form::open(array('url' => 'users/save')) !!}
-                    <div class="form-group">
-                        {{ Form::label('nombre', 'Nombre') }}
-                        {{ Form::text('nombre','', array('class' => 'form-control','placeholder'=>'Buscar por Nombre')) }}
-                    </div>
-                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                    {{ Form::submit('Guardar',array('class' => 'btn btn-primary')) }}
-                  
-                    {!! Form::close() !!}  
-                </div>
+                       <br>
+                       
+                       
+                 </div>
             </div>
+
+
+
         </div><!-- /.container -->
         <!-- Bootstrap core JavaScript
         ================================================== -->
@@ -63,7 +57,5 @@
         {!! Html::script('template/js/bootstrap.min.js') !!}
     </body>
 </html>
-
-
 
 
