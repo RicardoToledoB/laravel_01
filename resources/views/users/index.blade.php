@@ -87,7 +87,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ url('/users/detalle/'.$user->id) }}" class="btn btn-xs btn-success">
-                                        editar 
+                                        Detalle 
                                     </a>
 
                                 </td>

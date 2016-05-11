@@ -24,3 +24,14 @@ Route::delete('users/delete/{id}',[
     'uses'=>'UsuarioController@delete'
 ]);
 
+Route::get('users/edit/{id}',[
+    'as'=>'userEdit',
+    'uses'=>'UsuarioController@edit'
+]);
+
+
+Route::put('users/update/{id}',[
+   'as'=>'userUpdate',
+   'uses'=>'UsuarioController@update'
+    
+]);
